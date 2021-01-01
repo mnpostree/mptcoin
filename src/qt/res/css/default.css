@@ -11,7 +11,7 @@
 /* medium-purple2:     #273ec0 (sligtly darker for gradients)                           */
 /*                                                                                      */
 /* fuchsia:            #df1cca                                                          */
-/* background:         #f6ee7f                                                          */
+/* background:         #262261                                                          */
 /* input fields:       #e7e7e7                                                          */
 /****************************************************************************************/
 /*                                                                                      */
@@ -47,11 +47,11 @@ WalletFrame {
     }
     
     QMenuBar::item:selected {
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     QMenu {
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     QMenu::item {
@@ -506,11 +506,11 @@ WalletFrame {
     }
     
     QScrollBar::add-page, QScrollBar::sub-page { /* Scroll Bar Background */
-    background:#f6ee7f;
+    background:#262261;
     }
     
     QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { /* Define Arrow Button Dimensions */
-    background-color:#f6ee7f;
+    background-color:#262261;
     border: 1px solid #f2f0f0;
     width:16px;
     height:16px;
@@ -584,7 +584,7 @@ WalletFrame {
     }
     
     QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #fff, stop:1 #f6ee7f);
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #fff, stop:1 #262261);
     border: 1px solid #333;
     width: 18px;
     height: 18px;
@@ -622,7 +622,7 @@ WalletFrame {
     }
     
     QDialog .QTabWidget QTabBar::tab {
-    background-color:#f6ee7f;
+    background-color:#262261;
     color:#333;
     padding-left:10px;
     padding-right:10px;
@@ -703,7 +703,7 @@ WalletFrame {
     /**************************** SEND AND RECEIVE ADDRESSES DIALOG *****************************/
     
     QWidget#AddressBookPage {
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     /* QWidget#AddressBookPage QPushButton#newAddress { /* New Address Button */
@@ -924,19 +924,19 @@ WalletFrame {
     
     QWidget .QFrame#frame_BG { /* Background */
     min-width:400px;
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     /**************************** OVERVIEW SCREEN *******************************************/
     
     QWidget .QFrame#frame_Space { /* Space between Header and Content */
     min-width:400px;
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     QWidget .QFrame#frame_Content { /* Actual Content */
     min-width:400px;
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     QWidget .QFrame#frame_Balances { /* Upper left side */
@@ -1655,7 +1655,7 @@ WalletFrame {
     }
     
     QWidget#PrivacyDialog .QFrame#frame_Content {
-    background-color:#f6ee7f;
+    background-color:#262261;
     }
     
     QWidget#PrivacyDialog .QFrame#verticalFrameLeft {
