@@ -1,0 +1,8 @@
+/usr/bin/mnpostree-cli		--	gen_context(system_u:object_r:mnpostree_exec_t,s0)
+/usr/sbin/mnpostreed		--	gen_context(system_u:object_r:mnpostree_exec_t,s0)
+/usr/lib(64)?/mnpostree/mnpostreed		--	gen_context(system_u:object_r:mnpostree_exec_t,s0)
+
+/etc/mnpostree(/.*)?		gen_context(system_u:object_r:mnpostree_conf_t,s0)
+/var/lib/mnpostree(/.*)?		gen_context(system_u:object_r:mnpostree_var_lib_t,s0)
+
+(/var)?/run/mnpostreed(/.*)?   gen_context(system_u:object_r:mnpostree_var_run_t,s0)

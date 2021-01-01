@@ -1,0 +1,11 @@
+[Protocol]
+exec=mnpostree-qt '%u'
+protocol=mnpostree
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

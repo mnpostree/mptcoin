@@ -1,0 +1,157 @@
+
+## <summary>policy for mnpostree</summary>
+
+
+########################################
+## <summary>
+##	Transition to mnpostree.
+## </summary>
+## <param name="domain">
+## <summary>
+##	Domain allowed to transition.
+## </summary>
+## </param>
+#
+interface(`mnpostree_domtrans',`
+	gen_require(`
+		type mnpostree_t, mnpostree_exec_t;
+	')
+
+	corecmd_search_bin($1)
+	domtrans_pattern($1, mnpostree_exec_t, mnpostree_t)
+')
+
+
+########################################
+## <summary>
+##	Execute mnpostree server in the mnpostree domain.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnpostree_initrc_domtrans',`
+	gen_require(`
+		type mnpostree_initrc_exec_t;
+	')
+
+	init_labeled_script_domtrans($1, mnpostree_initrc_exec_t)
+')
+
+
+########################################
+## <summary>
+##	Search mnpostree lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnpostree_search_lib',`
+	gen_require(`
+		type mnpostree_var_lib_t;
+	')
+
+	allow $1 mnpostree_var_lib_t:dir search_dir_perms;
+	files_search_var_lib($1)
+')
+
+########################################
+## <summary>
+##	Read mnpostree lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnpostree_read_lib_files',`
+	gen_require(`
+		type mnpostree_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	read_files_pattern($1, mnpostree_var_lib_t, mnpostree_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage mnpostree lib files.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnpostree_manage_lib_files',`
+	gen_require(`
+		type mnpostree_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_files_pattern($1, mnpostree_var_lib_t, mnpostree_var_lib_t)
+')
+
+########################################
+## <summary>
+##	Manage mnpostree lib directories.
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+#
+interface(`mnpostree_manage_lib_dirs',`
+	gen_require(`
+		type mnpostree_var_lib_t;
+	')
+
+	files_search_var_lib($1)
+	manage_dirs_pattern($1, mnpostree_var_lib_t, mnpostree_var_lib_t)
+')
+
+
+########################################
+## <summary>
+##	All of the rules required to administrate
+##	a mnpostree environment
+## </summary>
+## <param name="domain">
+##	<summary>
+##	Domain allowed access.
+##	</summary>
+## </param>
+## <param name="role">
+##	<summary>
+##	Role allowed access.
+##	</summary>
+## </param>
+## <rolecap/>
+#
+interface(`mnpostree_admin',`
+	gen_require(`
+		type mnpostree_t;
+		type mnpostree_initrc_exec_t;
+		type mnpostree_var_lib_t;
+	')
+
+	allow $1 mnpostree_t:process { ptrace signal_perms };
+	ps_process_pattern($1, mnpostree_t)
+
+	mnpostree_initrc_domtrans($1)
+	domain_system_change_exemption($1)
+	role_transition $2 mnpostree_initrc_exec_t system_r;
+	allow $2 system_r;
+
+	files_search_var_lib($1)
+	admin_pattern($1, mnpostree_var_lib_t)
+
+')
+

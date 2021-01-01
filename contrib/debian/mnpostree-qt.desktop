@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=MNPosTree Core
+Comment=MNPosTree P2P Cryptocurrency
+Comment[fr]=MNPosTree, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MNPosTree, eşten eşe kriptografik sanal para birimi
+Exec=mnpostree-qt %u
+Terminal=false
+Type=Application
+Icon=mnpostree128
+MimeType=x-scheme-handler/mnpostree;
+Categories=Office;Finance;
+StartupWMClass=MNPosTree-qt

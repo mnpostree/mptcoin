@@ -1,0 +1,3 @@
+usr/local/bin/mnpostreed usr/bin
+usr/local/bin/mnpostree-cli usr/bin
+debian/examples/mnpostree.conf etc/mnpostree

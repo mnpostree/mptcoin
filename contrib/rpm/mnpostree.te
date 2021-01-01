@@ -1,0 +1,81 @@
+policy_module(mnpostree, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type mnpostree_t;
+type mnpostree_exec_t;
+init_daemon_domain(mnpostree_t, mnpostree_exec_t)
+
+permissive mnpostree_t;
+
+type mnpostree_initrc_exec_t;
+init_script_file(mnpostree_initrc_exec_t)
+
+type mnpostree_conf_t;
+files_type(mnpostree_conf_t)
+
+type mnpostree_var_lib_t;
+files_type(mnpostree_var_lib_t)
+
+type mnpostree_var_run_t;
+files_type(mnpostree_var_run_t)
+
+type mnpostree_port_t;
+corenet_port(mnpostree_port_t)
+
+########################################
+#
+# mnpostree local policy
+#
+allow mnpostree_t self:process { fork };
+
+allow mnpostree_t self:fifo_file rw_fifo_file_perms;
+allow mnpostree_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(mnpostree_t, mnpostree_conf_t, mnpostree_conf_t)
+manage_files_pattern(mnpostree_t, mnpostree_conf_t, mnpostree_conf_t)
+
+manage_dirs_pattern(mnpostree_t, mnpostree_var_lib_t, mnpostree_var_lib_t)
+manage_files_pattern(mnpostree_t, mnpostree_var_lib_t, mnpostree_var_lib_t)
+files_var_lib_filetrans(mnpostree_t, mnpostree_var_lib_t, { dir file })
+
+manage_dirs_pattern(mnpostree_t, mnpostree_var_run_t, mnpostree_var_run_t)
+manage_files_pattern(mnpostree_t, mnpostree_var_run_t, mnpostree_var_run_t)
+
+sysnet_dns_name_resolve(mnpostree_t)
+corenet_all_recvfrom_unlabeled(mnpostree_t)
+
+allow mnpostree_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(mnpostree_t)
+corenet_tcp_sendrecv_generic_node(mnpostree_t)
+corenet_tcp_sendrecv_all_ports(mnpostree_t)
+corenet_tcp_bind_generic_node(mnpostree_t)
+
+gen_require(`
+    type mnpostree_port_t;
+')
+allow mnpostree_t mnpostree_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type mnpostree_port_t;
+')
+allow mnpostree_t mnpostree_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(mnpostree_t)
+
+files_read_etc_files(mnpostree_t)
+
+miscfiles_read_localization(mnpostree_t)
+
+sysnet_dns_name_resolve(mnpostree_t)
+
+allow mnpostree_t mnpostree_exec_t:file execute_no_trans;
+allow mnpostree_t self:process setsched;
+corecmd_exec_ls(mnpostree_t)
+corenet_tcp_connect_http_port(mnpostree_t)
+dev_read_urand(mnpostree_t)
+fs_getattr_xattr_fs(mnpostree_t)
+kernel_read_system_state(mnpostree_t)

@@ -1,0 +1,37 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/mnpostree_bg.qm</file>
+        <file alias="ca">locale/mnpostree_ca.qm</file>
+        <file alias="cs">locale/mnpostree_cs.qm</file>
+        <file alias="da">locale/mnpostree_da.qm</file>
+        <file alias="de">locale/mnpostree_de.qm</file>
+        <file alias="en">locale/mnpostree_en.qm</file>
+        <file alias="en_GB">locale/mnpostree_en_GB.qm</file>
+        <file alias="en_US">locale/mnpostree_en_US.qm</file>
+        <file alias="eo">locale/mnpostree_eo.qm</file>
+        <file alias="es">locale/mnpostree_es.qm</file>
+        <file alias="es_ES">locale/mnpostree_es_ES.qm</file>
+        <file alias="fi">locale/mnpostree_fi.qm</file>
+        <file alias="fr_FR">locale/mnpostree_fr_FR.qm</file>
+        <file alias="hi_IN">locale/mnpostree_hi_IN.qm</file>
+        <file alias="hr">locale/mnpostree_hr.qm</file>
+        <file alias="hr_HR">locale/mnpostree_hr_HR.qm</file>
+        <file alias="it">locale/mnpostree_it.qm</file>
+        <file alias="ja">locale/mnpostree_ja.qm</file>
+        <file alias="ko_KR">locale/mnpostree_ko_KR.qm</file>
+        <file alias="lt_LT">locale/mnpostree_lt_LT.qm</file>
+        <file alias="nl">locale/mnpostree_nl.qm</file>
+        <file alias="pl">locale/mnpostree_pl.qm</file>
+        <file alias="pt">locale/mnpostree_pt.qm</file>
+        <file alias="pt_BR">locale/mnpostree_pt_BR.qm</file>
+        <file alias="ro_RO">locale/mnpostree_ro_RO.qm</file>
+        <file alias="ru">locale/mnpostree_ru.qm</file>
+        <file alias="sk">locale/mnpostree_sk.qm</file>
+        <file alias="sv">locale/mnpostree_sv.qm</file>
+        <file alias="tr">locale/mnpostree_tr.qm</file>
+        <file alias="uk">locale/mnpostree_uk.qm</file>
+        <file alias="vi">locale/mnpostree_vi.qm</file>
+        <file alias="zh_CN">locale/mnpostree_zh_CN.qm</file>
+        <file alias="zh_TW">locale/mnpostree_zh_TW.qm</file>
+    </qresource>
+</RCC>
