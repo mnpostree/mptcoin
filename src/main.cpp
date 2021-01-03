@@ -1988,31 +1988,25 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
+	LogPrintf("Block Height=%s\n", nHeight;
     int64_t nSubsidy = 0;
     
     if (nHeight == 0) {
-     nSubsidy = 1000000 * COIN;
-    }
-    else if (nHeight <= 1000 && nHeight > 0) {
-     nSubsidy = 1 * COIN;
-    }
-    else if (nHeight <= 130000 && nHeight >= 1001) {
-     nSubsidy = 50 * COIN;
-    }
-	else if (nHeight <= 400000 && nHeight > 130000) {
-     nSubsidy = 30 * COIN;
-    }
-	else if (nHeight <= 920000 && nHeight > 400000) {
-     nSubsidy = 20 * COIN;
-    }
-	else if (nHeight <= 1950000 && nHeight > 920000) {
-     nSubsidy = 15 * COIN;
-    }
-	else if (nHeight <= 3500000 && nHeight > 1950000) {
-     nSubsidy = 10 * COIN;
-    }
-	else if (nHeight > 3500000) {
-     nSubsidy = 5 * COIN;
+		nSubsidy = 1000000 * COIN;
+    }else if (nHeight <= 1000 && nHeight > 0) {
+		nSubsidy = 1 * COIN;
+    }else if (nHeight <= 130000 && nHeight >= 1001) {
+		nSubsidy = 50 * COIN;
+    }else if (nHeight <= 400000 && nHeight > 130000) {
+		nSubsidy = 30 * COIN;
+    }else if (nHeight <= 920000 && nHeight > 400000) {
+		nSubsidy = 20 * COIN;
+    }else if (nHeight <= 1950000 && nHeight > 920000) {
+		nSubsidy = 15 * COIN;
+    }else if (nHeight <= 3500000 && nHeight > 1950000) {
+		nSubsidy = 10 * COIN;
+    }else if (nHeight > 3500000) {
+		nSubsidy = 5 * COIN;
     }
     
     return nSubsidy;
