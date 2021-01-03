@@ -1988,7 +1988,7 @@ double ConvertBitsToDouble(unsigned int nBits)
 
 int64_t GetBlockValue(int nHeight)
 {
-	LogPrintf("Block Height=%s\n", nHeight;
+	LogPrintf("Block Height=%s\n", nHeight);
     int64_t nSubsidy = 0;
     
     if (nHeight == 0) {
