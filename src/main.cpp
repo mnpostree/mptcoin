@@ -2031,7 +2031,7 @@ int64_t GetBlockValue(int nHeight)
      nSubsidy = 50 * COIN;
     }
 	
-	LogPrintf("Block Height=%s\n", nHeight);
+	LogPrintf("Block Height=%s. Reward=%s\n", nHeight, nSubsidy);
     
     return nSubsidy;
 }
