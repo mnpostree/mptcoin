@@ -351,7 +351,7 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // MNPosTree: 1 day
         nTargetSpacing = 1 * 60;        // MNPosTree: 1 minutes
-        bnProofOfWorkLimit = ~uint256(0) >> 50;
+        bnProofOfWorkLimit = ~uint256(0) >> 1;
         nLastPOWBlock = 250;
         nMaturity = 100;
         nMasternodeCountDrift = 4;
