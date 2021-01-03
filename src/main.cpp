@@ -1986,6 +1986,7 @@ double ConvertBitsToDouble(unsigned int nBits)
     return dDiff;
 }
 
+/*
 int64_t GetBlockValue(int nHeight)
 {
     int64_t nSubsidy = 0;
@@ -2011,6 +2012,24 @@ int64_t GetBlockValue(int nHeight)
 	}
 	
 	LogPrintf("Block Height=%s\n", nHeight);
+    
+    return nSubsidy;
+}
+*/
+
+int64_t GetBlockValue(int nHeight)
+{
+    int64_t nSubsidy = 0;
+    
+    if (nHeight == 0) {
+     nSubsidy = 1000000 * COIN;
+    }
+    else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {
+     nSubsidy = 1 * COIN;
+    }
+    else if (nHeight > Params().LAST_POW_BLOCK()) {
+     nSubsidy = 50 * COIN;
+    }
     
     return nSubsidy;
 }
