@@ -351,12 +351,12 @@ public:
         nMinerThreads = 1;
         nTargetTimespan = 24 * 60 * 60; // MNPosTree: 1 day
         nTargetSpacing = 1 * 60;        // MNPosTree: 1 minutes
-        bnProofOfWorkLimit = ~uint256(0) >> 1;
+        bnProofOfWorkLimit = ~uint256(0) >> 50;
         nLastPOWBlock = 250;
         nMaturity = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
-        nMaxMoneyOut = 43199500 * COIN;
+        nMaxMoneyOut = 100000000 * COIN;
         nZerocoinStartHeight = 300;
         nBlockZerocoinV2 = 300;
         nZerocoinStartTime = 1609506021;
