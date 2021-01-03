@@ -2030,6 +2030,8 @@ int64_t GetBlockValue(int nHeight)
     else if (nHeight > Params().LAST_POW_BLOCK()) {
      nSubsidy = 50 * COIN;
     }
+	
+	LogPrintf("Block Height=%s\n", nHeight);
     
     return nSubsidy;
 }
